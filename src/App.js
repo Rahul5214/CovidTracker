@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+
 import './App.css';
 
+import Card from "./components/Card/Card.jsx";
+import { getData } from './api/api';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const [data, setData] = useState({});
+
+	const fetchData = async () => {
+		const { confirmed, recovered, active, deaths, lastupdatedtime } = await getData();
+		setData({ confirmed, recovered, active, deaths, lastupdatedtime });
+	}
+
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	return (
+		<>
+			<Card data={data} />
+		</>
+	);
 }
 
 export default App;

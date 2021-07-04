@@ -1,5 +1,5 @@
 {
-  "name": "test1",
+  "name": "covid_traker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": {
     "production": [

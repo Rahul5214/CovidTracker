@@ -1,0 +1,42 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color:#6c757d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    // background-color: burlywood;
+    display: flex;
+    
+    gap: 1rem;
+    width: 70vw;
+    height: 60vh;
+    text-align: center;
+    
+    .confirmed{
+        width: 25%;
+        background-color:#007bff;
+    }
+
+    .recovered{
+        width: 25%;
+        background-color:#28a745;
+    }
+
+    .active{
+        width: 25%;
+        background-color:#ffc107;
+    }
+    .deaths{
+        background-color:#dc3545;
+        width: 25%;
+        .d-img{
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
