@@ -1,42 +1,141 @@
 .container{
     height: 100vh;
     width: 100vw;
-    background-color:#6c757d;
+    background-image: linear-gradient(to right, rgba(103, 230, 145, 0.5), rgba(236, 245, 112, 0.507));
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+
+    .hero{
+        padding-top: 3rem;
+        padding-bottom:2rem;
+        text-transform: uppercase;
+        color: gray;
+    }
+
+    .india{
+        color: rgb(137, 129, 201);
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    .lastUpdate{
+        color: grey;
+        text-transform: capitalize;
+
+        span{
+            font-size: medium;
+        }
+    }
 }
 
 .main{
-    // background-color: burlywood;
+    padding-top: 3rem;
+    margin-bottom: 3rem;
     display: flex;
-    
-    gap: 1rem;
+    gap: 1.3rem;
     width: 70vw;
-    height: 60vh;
+    height: 40vh;
     text-align: center;
+    color: black;
     
     .confirmed{
         width: 25%;
-        background-color:#007bff;
+        background-color: rgba(255, 255, 255, 0.521);
+        border: 1px solid #17a2b8;
+        border-bottom: 1rem solid #17a2b8;
+        border-radius: .5rem;
+        box-shadow:0 .3rem .3rem  rgba( #000000, .4);
+
+        animation: scaleDown .2s ease-in-out;
+        animation-fill-mode: forwards;
+
+        @keyframes scaleDown {
+            from{
+                transform: scale(1.1);
+            }
+            to{
+                transform: scale(1);
+            }            
+        }
+        &:hover{
+            animation: scaleUp .2s linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes scaleUp {
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(1.1);
+            }            
+        }
     }
 
     .recovered{
         width: 25%;
-        background-color:#28a745;
+        background-color: rgba(255, 255, 255, 0.521);
+        border: 1px solid #28a745;
+        border-bottom: 1rem solid #28a745;
+        border-radius: .5rem;
+        box-shadow:0 .3rem .3rem  rgba( #000000, .4) ;
     }
 
     .active{
         width: 25%;
-        background-color:#ffc107;
+        background-color: rgba(255, 255, 255, 0.521);
+        border: 1px solid #ffc107;
+        border-bottom: 1rem solid #ffc107;
+        border-radius: .5rem;
+        box-shadow:0 .3rem .3rem  rgba( #000000, .4) ;
     }
+
     .deaths{
-        background-color:#dc3545;
         width: 25%;
-        .d-img{
-            object-fit: cover;
-            width: 100%;
-            height: auto;
+        background-color: rgba(255, 255, 255, 0.521);
+        border: 1px solid #dc3545;
+        border-bottom: 1rem solid #dc3545;
+        border-radius: .5rem;
+        box-shadow:0 .3rem .3rem  rgba( #000000, .4) ;
+    }
+    .title{
+        font-size: medium;
+        margin: 3rem auto 2rem auto;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+
+    .data-value{
+        font-weight: normal;
+    }
+}
+
+.confirmed,
+.active,
+.recovered,
+.deaths{
+
+    animation: scaleDown .1s ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes scaleDown {
+        from{
+            transform: scale(1.1);
         }
+        to{
+            transform: scale(1);
+        }            
+    }
+    &:hover{
+        animation: scaleUp .1s linear;
+        animation-fill-mode: forwards;
+    }
+    @keyframes scaleUp {
+        from{
+            transform: scale(1);
+        }
+        to{
+            transform: scale(1.1);
+        }            
     }
 }
